@@ -12,18 +12,15 @@
 
     <header> 
         <a href="index.html"><img src="images/KevinsKnickKnacksLogo_037DBE.png" alt="logo"></a>
-
-        <nav>
-            <div id="links">       
-                <a href="index.html">HOME</a>
-                <a href="shop.html">SHOP</a>
-                <a href="cart.html">CART</a>        
-            </div>
-        </nav>
-        
     </header>
   
-   
+    <nav>
+        <div id="links">       
+            <a href="index.html">HOME</a>
+            <a href="shop.html">SHOP</a>
+            <a href="cart.html">CART</a>        
+        </div>
+    </nav>
 
   <main>
     <aside>
@@ -86,10 +83,12 @@
                             <input type="number" value="1" min="1" max="5">
                         </div>
                         <p class="cartPrice">&dollar; 29.95</p>
+                </div> 
+
                     <div>                
                         <p class="textAlignRight removeMargins"><a href="#" class="removeLink">Remove</a></p>
                     </div>              
-                </div>                 
+                                
             </div> 
        
             <div class="cartCard">
@@ -101,30 +100,37 @@
                             <input type="number" value="1" min="1" max="5">
                         </div>
                         <p class="cartPrice">&dollar; 18.95</p>
+                </div>
+
                     <div>                
                         <p class="textAlignRight removeMargins"><a href="#" class="removeLink">Remove</a></p>              
                     </div>
-                </div>                 
+                                 
             </div> 
 
             <div class="cartCard">
                 <div class="cartCardFlex">
                     <img src="images/shop/thumbnails/SquishyCaterpillar_Thumb.jpg" alt="squashyCaterpillar">               
                         <p class="cartTitle">Squishy Caterpillar</p>
-                        <p>A squashy, spiky, multi-colored caterpillar</p>
+                        <p class="cartDescription">A squashy, spiky, multi-colored caterpillar</p>
                         <div class="cartQuantity">
                             <input type="number" value="1" min="1" max="5">
                         </div>
                         <p class="cartPrice">&dollar; 9.99</p>
+                </div>
+
                     <div>                
                         <p class="textAlignRight removeMargins"><a href="#" class="removeLink">Remove</a></p>              
                     </div>
-                </div>                 
+                               
             </div>
         </div>
     </div>
 
-    <div id="mainContentContainer"></div>
+    <div id="cartButtons">
+        <button class="clearCartButton" type="button">Clear Cart</button>
+        <button class="checkoutButton" type="button">Checkout</button>
+    </div>
 
   </main>
 
@@ -151,6 +157,109 @@
 
 </body>
 </html>    
+
+
+<!-- Task 1: Base Page on shop.html -->
+
+<!-- To make things easier, we will begin the cart.html page by copying and pasting the code from shop.html. Next, we will delete any unneeded code. -->
+
+<!-- 1. Copy all code from the shop.html page and paste it into the cart.html page -->
+<!-- 2. Update the title of the page to 'Cart - Kevin's Knick Knacks' -->
+<!-- 3. Remove all code found in the cart.html page that is in between the div tags with an id of sideBarContainer EXCEPT for the first 
+table row (Clown Umbrella) and its contents. When finished you should have one table row div with two divs inside -->
+
+<!-- Task 2: Create the Order Summary HTML -->
+
+<!-- The sidebar cart will be changed into an order summary. The summary will include a subtotal of all items currently in the cart, 
+the shipping charge, the sales tax, and the complete total amount due. We will keep the Clear Cart and Checkout buttons. -->
+
+<!-- 1. Change the text of the sideBarHeading div to 'ORDER SUMMARY' -->
+<!-- 2. Inside the tableRow div (inside sideBarContainer), modify the text within the first tableCell div from 'Clown Umbrella' to 'Subtotal' -->
+<!-- 3. Modify the text of the second tableCell div to '&dollar; 58.89'. JavaScript will be used in the future to update the subtotal amount -->
+<!-- 4. Next, we will add the shipping, sales tax, and total. Copy the entire Subtotal table row and its two inner table cell divs and 
+paste it 3 more times below the original (still inside the 'sideBarContainer' div). Again, JavaScript will be used in the future to 
+update these amounts
+    a. Modify the cell contents of each row to the following:
+        i. 2nd row:
+            x1. 1st cell -> 'Shipping'
+            x2. 2nd cell -> '&dollar; 3.00'
+        ii. 3rd row:
+            x1. 1st cell -> 'Sales Tax'
+            x2. 2nd cell -> '&dollar; 3.59'
+        ii. 4th row:
+            x1. 1st cell -> 'Total'
+            x2. 2nd cell -> '&dollar; 65.48' -->
+<!-- 5. Modify the two divs that include the text Sales Tax and &dollar; 3.59 to include the borderBottom class. This will create a line 
+between the tax and total to create a visual separation -->
+<!-- 6. Modify the div with the text of &dollar; 65.48 to include the bold class. This will make the Total amount bold to help it stand out -->
+
+
+<!-- Task 3: Create HTML for the Current Cart Products -->
+
+<!-- For this task we will focus on displaying the cart products. This too, will be displayed in a card structure with the difference being 
+that the card will span the entire width of the main area. The cards will include an image, the product name, the product description, 
+the product quantity, the product price, and a removal link to remove the product from the cart. All of the cards will be found inside 
+the mainContentContainer div inside another div named cartCardContainer. -->
+
+<!-- 1. Within the mainContentContainer div, change the name of the div with an id of cardContainer to 'cartCardContainer'. This div will be 
+used in a future project to populate the cart dynamically -->
+<!-- 2. Within the cartCardContainer div, change the name of the div with a class of card to 'cartCard'. This class will be used to 
+differentiate the cards on this page from the cards on the shop.html page -->
+<!-- 3. We will first modify the display of the first card (Clown Umbrella). We will then repeat the steps for the other two cards. Follow 
+these steps to update the Clown Umbrella card
+    a. Remove the id attribute from the div with the class of cartCard (for the Clown Umbrella card) because it is no longer needed
+    b. Delete the div with the class of cardText altogether but do not delete its content (don't forget the closing </div>)
+    c. Create a new div with a class of 'cartCardFlex' directly below the cartCard div. Close this div directly below the paragraph that 
+        displays the price of the Clown Umbrella product. (&dollar; 29.95) This div will be used to turn the display elements inside our 
+        card into a flexbox for easily display purposes
+    d. Modify the product name (Clown Umbrella) heading tag. Change the <h4> tags to <p> tags with a class of 'cartTitle'. The display elements 
+        for each card will align horizontally. We are changing this to a <p> tag so things will better align
+    e. Modify the product description (A porcelain figurine...). Add the class of 'cartDescription' to the <p> tag
+    f. Create a new div with a class of 'cartQuantity' directly below the cartDescription paragraph
+    g. Create an <input> element within the cartQuantity div. This input will be used for the shopper to add more than one of the same item 
+        into the cart. Add the following attributes:
+        i. type: 'number'
+        ii. value: '1'
+        iii. min: '1'
+        iv. max: '5'
+    h. Modify the paragraph tag that contains the price of the product. Add a class of 'cartPrice' to the opening <p> tag
+    i. Remove the Add to Cart button and replace it with a <p> element. This paragraph element will be used to create a Remove link to remove 
+        the item from the cart. Give the <p> element the 'textAlignRight' and 'removeMargins' classes
+        i. Create a new anchor element with the class of 'removeLink' within the the <p> tags
+        x1. Set the href attribute to '#'
+        x2. The link text will be 'Remove' -->
+<!-- 4. Repeat steps 2-9 to update the Elephant Figurines and Squishy Caterpillar cards to the same format -->
+
+
+<!-- Task 4: Create CSS for the Current Cart Products -->
+
+<!-- We will now add CSS for the current cart products. Each product will be display in a horizontal card format. -->
+
+<!-- 1. At the bottom of the style.css page, create a new selector for the 'cartCard' class. Add the following properties:
+    a. A box shadow of '0 3px 8px 0 rgba(0, 0, 0, 0.2)'
+    b. A transition of '0.3s'
+    c. A border radius of '5px'
+    d. Padding on all sides of '15px'
+    e. A bottom margin of '40px' -->
+<!-- 2. Create a hover pseudo class for the cartCard class and set its box shadow to '0 6px 10px 0 rgba(0, 0, 0, 0.2)' -->
+<!-- 3. Create a new selector for the 'cartCardFlex' class. Set its display to 'flex' -->
+<!-- 4. Create a descendant selector that selects any image inside the cartCard class and sets their width to '10%' and the 'flex' property 
+    to '10%'. These properties are used to resize the image to fit inside the size of the card. We want the image to take up 10% of the flexbox -->
+<!-- 5. Create a new selector for the 'cartTitle' class. Set the product name (title) to take up 20% of the flexbox and display in bold. Also 
+    include a left padding of '10px' to create some space between it and the image -->
+<!-- 6. Create a new 'cartDescription' class selector. Set the product description to take up 50% of the flexbox. Also include a left padding 
+    of '10px' to add some space between the description and title -->
+<!-- 7. Create a new 'cartQuantity' class selector. Set the quantity to take up 10% of the flexbox -->
+<!-- 8. Create a descendant selector that selects any <input> element within any element with the cartQuantity class. Set its top margin to '17px' 
+    and its width to '50px'. This helps line up the input box with the other elements -->
+<!-- 9. Create a new 'cartPrice' class selector. Set the price to take up 10% of the flexbox. Also, include a left padding of '10px' to add some 
+    space between the price and quantity -->
+<!-- 10. Create a new 'removeMargins' class selector. Set all margins to '0'. This will remove the margins around the 'Remove' link -->
+<!-- 11. Create a new 'textAlignRight' class selector that will align any text to the right -->
+
+
+
+
 
 
 
